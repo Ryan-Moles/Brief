@@ -7,7 +7,7 @@ COPY . .
 #^copy from my frontend directory to the docker /app dir
 RUN npm ci
 
-EXPOSE 8080
+EXPOSE 3000
 #^port that we use to access frontend docker side
 
 ENTRYPOINT [ "npm", "run", "dev"]
