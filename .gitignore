@@ -26,4 +26,4 @@ dist-ssr
 
 ##Backend stuff
 
-.venv
+*/.venv
