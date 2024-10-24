@@ -9,7 +9,7 @@ COPY . .
 
 RUN pip install --trusted-host pypi.org --trusted-host pypi.python.org --trusted-host=files.pythonhosted.org --no-cache-dir -r requirements.txt
 
-EXPOSE 8000
+EXPOSE 8088
 
 ENTRYPOINT [ "python", "server/manage.py", "runserver", "0.0.0.0:8000" ]
 
