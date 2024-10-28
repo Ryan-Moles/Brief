@@ -2,11 +2,12 @@
 
 ## Ports used:
 
-| Service  | Local | Container |
-| :------- | :---: | :-------: |
-| Frontend | 5173  |   3030    |
-| Backend  | 8000  |   8088    |
-| Database |  tbc  |    tbc    |
+| Service  | Container | Exposed |
+| :------- | :-------: | :-----: |
+| Frontend |   5173    |  3030   |
+| Backend  |   8000    |  8088   |
+| Database |   5432    |  8090   |
+| Adminer  |   8080    |  8089   |
 
 ## Set Up:
 
