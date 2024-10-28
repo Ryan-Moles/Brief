@@ -6,12 +6,42 @@ services:
     ports:
       - "3030:5173"
     volumes:
-      - ./app:/frontend
+      - frontend:/app
+      
   backend:
     build:
       context: ./backend
       dockerfile: Dockerfile
     ports:
       - "8088:8000"
+    depends_on:
+      db:
+        condition: service_healthy
     volumes:
-      - ./backend:/backend
+      - backend:/app
+
+  db:
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: password
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready"]
+      interval: 1s
+      timeout: 5s
+      retries: 10
+    ports:
+      - 8090:5432
+
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - 8089:8080
+
+volumes:
+  backend:
+  frontend:
+  pgdata:
