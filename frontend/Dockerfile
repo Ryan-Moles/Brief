@@ -1,7 +1,7 @@
 FROM node:lts-alpine 
 # ^uses node (as in npm) and long term support alpine(alpine being a lightweight node distribution)
 
-WORKDIR /app
+WORKDIR /frontend
 
 COPY . .
 #^copy from my frontend directory to the docker /app dir
