@@ -17,3 +17,5 @@ For developing on the django server you need to be in a a python venv. To access
  cd backend
  source ./scripts/setup.sh
 ```
+
+For admin: http://localhost:8088/admin
