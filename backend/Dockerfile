@@ -1,15 +1,13 @@
-FROM python:3.11
-
-ENV PYTHONDONTWRITEBYTECODE 1
-ENV PYTHONUNBUFFERED 1
+FROM node:lts-alpine 
+# ^uses node (as in npm) and long term support alpine(alpine being a lightweight node distribution)
 
 WORKDIR /backend
 
 COPY . .
-
-RUN pip install --trusted-host pypi.org --trusted-host pypi.python.org --trusted-host=files.pythonhosted.org --no-cache-dir -r requirements.txt
+#^copy from my frontend directory to the docker /app dir
+RUN npm ci
 
 EXPOSE 8088
+#^port that we use to access frontend docker side
 
-ENTRYPOINT [ "python", "server/manage.py", "runserver", "0.0.0.0:8000" ]
-
+ENTRYPOINT [ "node", "src/index.js"]

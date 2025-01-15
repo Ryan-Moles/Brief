@@ -22,22 +22,5 @@ services:
     env_file:
       - ./.env
 
-  db:
-    image: postgres
-    restart: always
-    env_file:
-      - ./.env
-    volumes:
-      - pgdata:/var/lib/postgresql/data
-    ports:
-      - 8090:5432
-
-  adminer:
-    image: adminer
-    restart: always
-    ports:
-      - 8089:8080
-
 volumes:
   frontend:
-  pgdata:
