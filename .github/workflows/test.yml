@@ -1,4 +1,4 @@
-name: Running test suites
+name: Running test suite
 
 on:
   pull_request:
