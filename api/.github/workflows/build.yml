@@ -1,18 +1,30 @@
-name: GitHub Actions Demo
-run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
-on: pull_request
+name: Running test suites
+
+on:
+  pull_request:
+
 jobs:
-  buildAPI:
+  test:
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        directory: [api, app, infra]
+
     steps:
-      - uses: actions/checkout@v4
-      - run:
-        working-directory: api
-      - name: Use Node.js 22.x
-        uses: actions/setup-node@v4
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Use Node.js
+        uses: actions/setup-node@v4 
         with:
-          node-version: "22.x"
-          cache: "npm"
-      - run: npm ci
-      - run: npm run build --if-present
-      - run: npm test
+          node-version: 20
+          cache: npm
+          cache-dependency-path: ${{ matrix.directory }}/package-lock.json
+
+      - name: Install dependencies
+        run: npm ci
+        working-directory: ${{ matrix.directory }}
+
+      - name: Run tests
+        run: npm test
+        working-directory: ${{ matrix.directory }}
