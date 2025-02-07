@@ -4,11 +4,10 @@ on: pull_request
 jobs:
   buildAPI:
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: api
     steps:
       - uses: actions/checkout@v4
+      - run:
+        working-directory: api
       - name: Use Node.js 22.x
         uses: actions/setup-node@v4
         with:
