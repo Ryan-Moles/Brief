@@ -14,7 +14,7 @@ type navbarProps = {
 
 export const Navbar = ({ isDesktop }: navbarProps) => {
   return (
-    <Box sx={{ flexGrow: 1 }}>
+    <Box sx={{ flexGrow: 2 }}>
       <AppBar position="static">
         <Toolbar>
           <IconButton
