@@ -1,3 +1,9 @@
+import LoginCard from "../components/logInmodal/LoginModal";
+
 export const Home = () => {
-  return <>This is a test</>;
+  return (
+    <>
+      <LoginCard />
+    </>
+  );
 };
