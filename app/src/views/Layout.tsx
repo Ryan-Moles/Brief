@@ -1,5 +1,5 @@
 import { useMediaQuery } from "@mui/material";
-import { Navbar } from "../components/navbar/Navbar";
+import { Navbar } from "../components/Navbar/Navbar";
 import { Outlet } from "react-router";
 
 export const Layout = () => {
