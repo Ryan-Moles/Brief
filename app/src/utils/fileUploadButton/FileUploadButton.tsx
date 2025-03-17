@@ -1,6 +1,7 @@
 import Button from "@mui/material/Button";
 import CloudUploadIcon from "@mui/icons-material/CloudUpload";
 import { styled } from "@mui/material/styles";
+import { Dispatch, SetStateAction } from "react";
 
 const FileUploadInput = styled("input")({
   clip: "rect(0 0 0 0)",
@@ -14,7 +15,11 @@ const FileUploadInput = styled("input")({
   width: 1,
 });
 
-export const FileUploadButton = () => {
+interface FileUploadButtonProps {
+  setFile: Dispatch<SetStateAction<Blob | FileList | File | undefined>>;
+}
+
+export const FileUploadButton = ({ setFile }: FileUploadButtonProps) => {
   return (
     <Button
       component="label"
@@ -26,7 +31,10 @@ export const FileUploadButton = () => {
       Upload files
       <FileUploadInput
         type="file"
-        onChange={(event) => console.log(event.target.files)}
+        onChange={(event) => {
+          setFile(event.target.files!);
+          console.log(event.target.files!);
+        }}
       />
     </Button>
   );

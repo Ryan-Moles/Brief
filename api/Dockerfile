@@ -1,13 +1,12 @@
 FROM node:lts-alpine 
-# ^uses node (as in npm) and long term support alpine(alpine being a lightweight node distribution)
 
-WORKDIR /backend
+WORKDIR /api
 
 COPY . .
-#^copy from my frontend directory to the docker /app dir
+#^copy from my api directory to the docker /api dir
 RUN npm ci
 
 EXPOSE 8088
-#^port that we use to access frontend docker side
+#^port that we use to access api docker side
 
-ENTRYPOINT [ "node", "src/index.js"]
+ENTRYPOINT [ "node", "dist/src/server.js"]

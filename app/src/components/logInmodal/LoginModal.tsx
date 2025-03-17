@@ -8,8 +8,6 @@ import Typography from "@mui/material/Typography";
 import { TextField } from "@mui/material";
 import { useState } from "react";
 
-
-
 const LoginBox = () => {
   type LoginDetails = {
     email: string;
@@ -78,11 +76,19 @@ const LoginBox = () => {
 
 export default function LoginCard() {
   return (
-    <Box sx={{ minWidth: 275, display: "flex", justifyContent: "center" }}>
+    <Box
+      sx={{
+        minWidth: 275,
+        display: "flex",
+        justifyContent: "center",
+      }}
+    >
       <Card
         sx={{
           boxShadow: "rgba(0, 0, 0, 0.35) 0px 0px 10px",
           padding: "40px",
+          position: "absolute",
+          top: "30%",
         }}
         variant="outlined"
       >
