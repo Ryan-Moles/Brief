@@ -1,4 +1,4 @@
-import LoginCard from "../components/logInmodal/LoginModal";
+import LoginCard from "../components/logInModal/LoginModal";
 
 export const Home = () => {
   return (
