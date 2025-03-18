@@ -4,6 +4,7 @@ import { FileUpload } from "./views/FileUpload";
 import { BrowserRouter, Routes, Route } from "react-router";
 import { ThemeProvider } from "@emotion/react";
 import { theme } from "./theme";
+import { Transcribe } from "./views/Transcription";
 
 export const App = () => {
   return (
@@ -13,6 +14,7 @@ export const App = () => {
           <Route element={<Layout />}>
             <Route path="/" element={<Home />} />
             <Route path="/upload" element={<FileUpload />} />
+            <Route path="/transcribe" element={<Transcribe />} />
           </Route>
         </Routes>
       </BrowserRouter>

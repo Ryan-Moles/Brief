@@ -7,6 +7,7 @@ import {
   Typography,
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
+import { theme } from "../../theme";
 
 type navbarProps = {
   isDesktop: boolean;
@@ -14,9 +15,13 @@ type navbarProps = {
 
 export const Navbar = ({ isDesktop }: navbarProps) => {
   return (
-    <Box sx={{ flexGrow: 2 }}>
-      <AppBar position="static">
+    <Box sx={{ width: "100%", justifyItems: "right" }}>
+      <AppBar position="static" sx={{ backgroundColor: theme.palette.primary.main }}>
         <Toolbar>
+          <Typography variant="h6" component="div" sx={{ flexGrow: 5 }}>
+            Brief
+          </Typography>
+          <Button color="inherit">Login</Button>
           <IconButton
             size="large"
             edge="start"
@@ -26,10 +31,6 @@ export const Navbar = ({ isDesktop }: navbarProps) => {
           >
             <MenuIcon />
           </IconButton>
-          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-            News
-          </Typography>
-          <Button color="inherit">Login</Button>
         </Toolbar>
       </AppBar>
     </Box>
