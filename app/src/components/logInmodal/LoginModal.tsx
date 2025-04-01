@@ -87,8 +87,9 @@ export default function LoginCard() {
         sx={{
           boxShadow: "rgba(0, 0, 0, 0.35) 0px 0px 10px",
           padding: "40px",
-          position: "absolute",
+          position: "relative",
           top: "30%",
+          marginTop: "10%",
         }}
         variant="outlined"
       >
