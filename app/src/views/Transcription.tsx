@@ -62,7 +62,6 @@ export const Transcribe = () => {
           margin: "20px",
         }}
       >
-        hello world
         <Typography>Meeting</Typography>
         <Button
           onClick={() => {
