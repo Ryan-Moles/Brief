@@ -50,7 +50,7 @@ export const Transcribe = () => {
         flexDirection: "row",
         marginTop: 5,
         height: "100vh",
-        backgroundColor: theme.palette.secondary.main,
+        backgroundColor: theme.palette.primary.main,
       }}
     >
       <Paper
