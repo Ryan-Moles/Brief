@@ -7,3 +7,7 @@ back-up:
 
 front-up:
 	npm --prefix ./app run dev
+
+install:
+	cd ./api && npm install
+	cd ./app && npm install
